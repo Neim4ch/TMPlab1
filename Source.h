@@ -3,7 +3,7 @@
 #include <fstream>
 using namespace std;
 class film {
-public:
+public:///123213213213231312321321321312321
 	// иденитфикация, порождение и ввод фигуры из потока
 	static film* In(ifstream& ifst);
 	virtual void InData(ifstream& ifst) = 0; // ввод
