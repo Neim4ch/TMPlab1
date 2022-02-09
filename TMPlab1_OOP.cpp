@@ -1,7 +1,8 @@
 // TMPlab1_OOP.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //#include <iostream>
 //#include <fstream>
-#include "Source.h"
+//#include "Source.h"
+#include "Source.cpp"
 using namespace std;
 int main(int argc, char* argv[])
 {
@@ -18,12 +19,13 @@ int main(int argc, char* argv[])
 	//ofstream ofst("out.txt");
 	cout << "Start" << endl;
 	container c;
-		c.In(ifst);
+
+	InCont(ifst, c);
 	ofst << "Filled container. " << endl;
-	c.Out(ofst);
-	c.Clear();
+	OutCont(ofst, c);
+	Clear(c);
 	ofst << "Empty container. " << endl;
-	c.Out(ofst);
+	OutCont(ofst, c);
 	cout << "Stop" << endl;
 	return 0;
 }
