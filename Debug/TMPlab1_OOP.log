@@ -1,12 +1,1 @@
-﻿  Source.cpp
-  TMPlab1_OOP.cpp
-  Generating Code...
-TMPlab1_OOP.obj : error LNK2005: "void __cdecl Clear(struct container)" (?Clear@@YAXUcontainer@@@Z) already defined in Source.obj
-TMPlab1_OOP.obj : error LNK2005: "void __cdecl InAnimation(class std::basic_ifstream<char,struct std::char_traits<char> > &,struct animation_film &)" (?InAnimation@@YAXAAV?$basic_ifstream@DU?$char_traits@D@std@@@std@@AAUanimation_film@@@Z) already defined in Source.obj
-TMPlab1_OOP.obj : error LNK2005: "void __cdecl InCont(class std::basic_ifstream<char,struct std::char_traits<char> > &,struct container)" (?InCont@@YAXAAV?$basic_ifstream@DU?$char_traits@D@std@@@std@@Ucontainer@@@Z) already defined in Source.obj
-TMPlab1_OOP.obj : error LNK2005: "void __cdecl InFeature(class std::basic_ifstream<char,struct std::char_traits<char> > &,struct feature_film &)" (?InFeature@@YAXAAV?$basic_ifstream@DU?$char_traits@D@std@@@std@@AAUfeature_film@@@Z) already defined in Source.obj
-TMPlab1_OOP.obj : error LNK2005: "struct film * __cdecl InFilm(class std::basic_ifstream<char,struct std::char_traits<char> > &)" (?InFilm@@YAPAUfilm@@AAV?$basic_ifstream@DU?$char_traits@D@std@@@std@@@Z) already defined in Source.obj
-TMPlab1_OOP.obj : error LNK2005: "void __cdecl OutAnimation(class std::basic_ofstream<char,struct std::char_traits<char> > &,struct animation_film &)" (?OutAnimation@@YAXAAV?$basic_ofstream@DU?$char_traits@D@std@@@std@@AAUanimation_film@@@Z) already defined in Source.obj
-TMPlab1_OOP.obj : error LNK2005: "void __cdecl OutCont(class std::basic_ofstream<char,struct std::char_traits<char> > &,struct container)" (?OutCont@@YAXAAV?$basic_ofstream@DU?$char_traits@D@std@@@std@@Ucontainer@@@Z) already defined in Source.obj
-TMPlab1_OOP.obj : error LNK2005: "void __cdecl OutFeature(class std::basic_ofstream<char,struct std::char_traits<char> > &,struct feature_film &)" (?OutFeature@@YAXAAV?$basic_ofstream@DU?$char_traits@D@std@@@std@@AAUfeature_film@@@Z) already defined in Source.obj
-C:\Users\bushd\source\repos\TMPlab1_OOP\Debug\TMPlab1_OOP.exe : fatal error LNK1169: one or more multiply defined symbols found
+﻿  TMPlab1_OOP.vcxproj -> C:\Users\bushd\source\repos\TMPlab1_OOP\Debug\TMPlab1_OOP.exe
