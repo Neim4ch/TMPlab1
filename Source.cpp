@@ -1,30 +1,30 @@
 #include "Source.h"
 using namespace std;
 
-void InFeature(ifstream &ifst, feature_film* f) {
-	ifst >> f->director;
+void InFeature(ifstream &ifst, feature_film& f) {
+	ifst >> f.director;
 }
-void OutFeature(ofstream& ofst, feature_film* f) {
-	ofst << "It is feature film. Director is " << f->director << endl;
+void OutFeature(ofstream& ofst, feature_film& f) {
+	ofst << "It is feature film. Director is " << f.director << endl;
 }
-void InAnimation(ifstream& ifst, animation_film* a) {
+void InAnimation(ifstream& ifst, animation_film& a) {
 	int t;
 	ifst >> t;
 	switch (t)
 	{
 	case 1:
-		a->woc = DRAWN;
+		a.woc = DRAWN;
 		break;
 	case 2:
-		a->woc = DOLL;
+		a.woc = DOLL;
 		break;
 	case 3:
-		a->woc = STOP_MOTION;
+		a.woc = STOP_MOTION;
 		break;
 	}
 }
-void OutAnimation(ofstream& ofst, animation_film* a) {
-	switch (a->woc)
+void OutAnimation(ofstream& ofst, animation_film& a) {
+	switch (a.woc)
 	{
 	case 0:
 		//woc = DRAWN;
@@ -52,9 +52,9 @@ film* InFilm(ifstream& ifst) {
 	case 1:
 		fl->key = feature;
 		//feature_film f;
-		InFeature(ifst, &f);
+		InFeature(ifst, f);
 //		fl->obj = (feature_film*)&f;
-		fl->obj = &f;
+		fl->obj = (void*)f;
 		break;
 	case 2:
 		fl->key = animation;
