@@ -18,7 +18,6 @@ struct Node {
 
 struct feature_film {
 	string director = "";
-	//int director;
 };
 
 enum way { DRAWN, DOLL, STOP_MOTION };// способ создания

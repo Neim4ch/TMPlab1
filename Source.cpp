@@ -27,20 +27,15 @@ void OutAnimation(ofstream& ofst, animation_film& a) {
 	switch (a.woc)
 	{
 	case 0:
-		//woc = DRAWN;
 		ofst << "It is animation film. It's way of creation is drawing."<< endl;
 		break;
 	case 1:
-		//woc = DOLL;
 		ofst << "It is animation film. It's way of creation is using dolls" << endl;
 		break;
 	case 2:
-		//woc = STOP_MOTION;
 		ofst << "It is animation film. It's way of creation is stop motion" << endl;
 		break;
 	}
-
-	//ofst << "It is animation film. It's way of creation is " << woc << endl;
 }
 film* InFilm(ifstream& ifst) {
 	film* fl = new film;
@@ -51,15 +46,12 @@ film* InFilm(ifstream& ifst) {
 	switch (k) {
 	case 1:
 		fl->key = feature;
-		//feature_film f;
 		f = new feature_film;
 		InFeature(ifst, *f);
-//		fl->obj = (feature_film*)&f;
 		fl->obj = (void*)f;
 		break;
 	case 2:
 		fl->key = animation;
-		//animation_film a;
 		a = new animation_film;
 		InAnimation(ifst, *a);
 		fl->obj = (void*)a;
@@ -67,7 +59,6 @@ film* InFilm(ifstream& ifst) {
 	default:
 		return 0;
 	}
-	//fl->InData(ifst);
 	feature_film f1;
 
 	if (fl->key == feature) {
@@ -88,7 +79,6 @@ void InCont(ifstream& ifst, container* c) {
 
 		Node* newNode = new Node;
 		newNode->fl = InFilm(ifst);
-		//cout << "newNode" << newNode->pic->key;
 		feature_film* f1 = (feature_film*)newNode->fl->obj;
 		if (c->head == NULL)
 		{
@@ -119,7 +109,6 @@ void OutCont(ofstream& ofst, container* c) {
 		if (c->curr->fl->key == feature) 
 		{
 			feature_film* pf;
-			//void* obj1 = *&c->curr->fl->obj;
 			pf = (feature_film *)(c->curr->fl->obj);
 			OutFeature(ofst, *pf);
 		}
