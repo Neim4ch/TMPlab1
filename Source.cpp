@@ -44,23 +44,25 @@ void OutAnimation(ofstream& ofst, animation_film& a) {
 }
 film* InFilm(ifstream& ifst) {
 	film* fl = new film;
-	feature_film f;
-	animation_film a;
+	feature_film* f;
+	animation_film* a;
 	int k = 0;
 	ifst >> k;
 	switch (k) {
 	case 1:
 		fl->key = feature;
 		//feature_film f;
-		InFeature(ifst, f);
+		f = new feature_film;
+		InFeature(ifst, *f);
 //		fl->obj = (feature_film*)&f;
 		fl->obj = (void*)f;
 		break;
 	case 2:
 		fl->key = animation;
 		//animation_film a;
-		InAnimation(ifst, &a);
-		fl->obj = &a;
+		a = new animation_film;
+		InAnimation(ifst, *a);
+		fl->obj = (void*)a;
 		break;
 	default:
 		return 0;
@@ -119,13 +121,13 @@ void OutCont(ofstream& ofst, container* c) {
 			feature_film* pf;
 			//void* obj1 = *&c->curr->fl->obj;
 			pf = (feature_film *)(c->curr->fl->obj);
-			OutFeature(ofst, pf);
+			OutFeature(ofst, *pf);
 		}
 		else
 		{
-			animation_film a;
-			a = *(animation_film*)c->curr->fl->obj;
-			OutAnimation(ofst, &a);
+			animation_film* pa;
+			pa = (animation_film*)c->curr->fl->obj;
+			OutAnimation(ofst, *pa);
 		}
 		c->curr = c->curr->next;
 		i++;
