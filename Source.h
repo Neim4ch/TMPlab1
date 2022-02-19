@@ -35,11 +35,7 @@ public:
 	void Out(ofstream& ofst); // вывод
 	animation() {} // создание без инициализации.
 };
-class container {
-	//enum { max_len = 100 }; // максимальная длина
-	//int len; // текущая длина
-	//shape* cont[max_len];
-	
+class container {	
 public:
 	Node *head;
 	Node *curr;

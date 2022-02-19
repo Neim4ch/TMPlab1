@@ -26,20 +26,15 @@ void animation::Out(ofstream& ofst) {
 	switch (woc)
 	{
 	case 0:
-		//woc = DRAWN;
 		ofst << "It is animation film. It's way of creation is drawing."<< endl;
 		break;
 	case 1:
-		//woc = DOLL;
 		ofst << "It is animation film. It's way of creation is using dolls" << endl;
 		break;
 	case 2:
-		//woc = STOP_MOTION;
 		ofst << "It is animation film. It's way of creation is stop motion" << endl;
 		break;
 	}
-
-	//ofst << "It is animation film. It's way of creation is " << woc << endl;
 }
 film* film::In(ifstream& ifst) {
 	film* fl;
@@ -75,16 +70,9 @@ void container::Clear() {
 	curr = NULL;
 	size = 0;
 }
-//Node::Node()
-//{
-//	figure = new shape;
-//	next = NULL;
-//}
+
 void container::In(ifstream& ifst) {
 	while (!ifst.eof()) {
-		/*if ((cont[len] = shape::In(ifst)) != 0) {
-			len++;
-		}*/
 		Node* newNode;
 		newNode = new Node((film::In(ifst)));
 		if (head == NULL)
@@ -106,11 +94,7 @@ void container::In(ifstream& ifst) {
 }
 void container::Out(ofstream& ofst) {
 	ofst << "Container contents " << size
-		<< " elements." << endl;
-	/*for (int i = 0; i < size; i++) {
-		ofst << i << ": ";
-		cont[i]->Out(ofst);
-	}*/
+		 << " elements." << endl;
 	int i = 0;
 	curr = head;
 	while (curr != NULL)
