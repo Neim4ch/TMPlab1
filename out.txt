@@ -1,10 +1,16 @@
 Filled container. 
 Container contents 6 elements.
-0: It is feature film. Director is Lucas
-1: It is animation film. It's way of creation is drawing.
-2: It is animation film. It's way of creation is using dolls
-3: It is animation film. It's way of creation is stop motion
-4: It is feature film. Director is Scorsese
-5: It is feature film. Director is Spielberg
+0: This is film0. It is feature film. Director is Lucas
+Number of vowels = 1
+1: This is film1. It is animation film. It's way of creation is drawing.
+Number of vowels = 1
+2: This is film2. It is animation film. It's way of creation is using dolls
+Number of vowels = 1
+3: This is film3. It is animation film. It's way of creation is stop motion
+Number of vowels = 1
+4: This is film4. It is feature film. Director is Scorsese
+Number of vowels = 1
+5: This is film5aaaaaaaa. It is feature film. Director is Spielberg
+Number of vowels = 9
 Empty container. 
 Container contents 0 elements.

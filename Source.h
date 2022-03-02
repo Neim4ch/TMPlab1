@@ -8,6 +8,7 @@ public:
 	static film* In(ifstream& ifst);
 	virtual void InData(ifstream& ifst) = 0; // ввод
 	virtual void Out(ofstream& ofst) = 0; // вывод
+	virtual int countVowels() = 0; // гласные 
 };
 class Node {
 public:
@@ -19,20 +20,24 @@ public:
 // игровой фильм
 class feature : public film {
 	string director; // режисер
+	string name;
 public:
 	// переопредел€ем интерфейс класса
 	void InData(ifstream& ifst); // ввод
 	void Out(ofstream& ofst); // вывод
+	int countVowels();
 	feature() {} // создание без инициализации.
 };
 // мультфильм
 class animation : public film {
 	enum way { DRAWN, DOLL, STOP_MOTION };// способ создани€
 	way woc;//способ создани€
+	string name;
 public:
 	// переопредел€ем интерфейс класса
 	void InData(ifstream& ifst); // ввод
 	void Out(ofstream& ofst); // вывод
+	int countVowels();
 	animation() {} // создание без инициализации.
 };
 class container {	
@@ -43,6 +48,7 @@ public:
 
 	void In(ifstream& ifst); // ввод
 	void Out(ofstream& ofst); // вывод
+	void OutCntVowels(ofstream& ofst); //вывод количества гласных букв
 	void Clear(); // очистка контейнера от фигур
 	container(); // инициализаци€ контейнера
 	~container() { Clear(); } // утилизаци€ контейнера
