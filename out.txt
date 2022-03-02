@@ -1,10 +1,12 @@
 Filled container. 
-Container contents 6 elements.
+Container contents 8 elements.
 0: It is feature film. Director is Lucas
 1: It is animation film. It's way of creation is drawing.
 2: It is animation film. It's way of creation is using dolls
 3: It is animation film. It's way of creation is stop motion
 4: It is feature film. Director is Scorsese
 5: It is feature film. Director is Spielberg
+6: It is documentary film. It's year of creation is 999
+7: It is documentary film. It's year of creation is 777
 Empty container. 
 Container contents 0 elements.
