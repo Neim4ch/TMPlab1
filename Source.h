@@ -19,6 +19,7 @@ public:
 // игровой фильм
 class feature : public film {
 	string director; // режисер
+	string country;
 public:
 	// переопределяем интерфейс класса
 	void InData(ifstream& ifst); // ввод
@@ -29,6 +30,7 @@ public:
 class animation : public film {
 	enum way { DRAWN, DOLL, STOP_MOTION };// способ создания
 	way woc;//способ создания
+	string country;
 public:
 	// переопределяем интерфейс класса
 	void InData(ifstream& ifst); // ввод

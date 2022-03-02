@@ -2,9 +2,11 @@
 using namespace std; 
 void feature::InData(ifstream& ifst) {
 	ifst >> director;
+	ifst >> country;
 }
 void feature::Out(ofstream& ofst) {
 	ofst << "It is feature film. Director is " << director << endl;
+	ofst << "This picture was filmed in " << country << endl;
 }
 void animation::InData(ifstream& ifst) {
 	int t;
@@ -21,6 +23,7 @@ void animation::InData(ifstream& ifst) {
 		woc = STOP_MOTION;
 		break;
 	}
+	ifst >> country;
 }
 void animation::Out(ofstream& ofst) {
 	switch (woc)
@@ -35,6 +38,7 @@ void animation::Out(ofstream& ofst) {
 		ofst << "It is animation film. It's way of creation is stop motion" << endl;
 		break;
 	}
+	ofst << "This picture was filmed in " << country << endl;
 }
 film* film::In(ifstream& ifst) {
 	film* fl;
