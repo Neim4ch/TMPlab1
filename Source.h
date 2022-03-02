@@ -8,6 +8,7 @@ public:
 	static film* In(ifstream& ifst);
 	virtual void InData(ifstream& ifst) = 0; // ввод
 	virtual void Out(ofstream& ofst) = 0; // вывод
+	virtual void OutFeature(ofstream& ofst) = 0;
 };
 class Node {
 public:
@@ -23,6 +24,7 @@ public:
 	// переопределяем интерфейс класса
 	void InData(ifstream& ifst); // ввод
 	void Out(ofstream& ofst); // вывод
+	void OutFeature(ofstream& ofst);
 	feature() {} // создание без инициализации.
 };
 // мультфильм
@@ -33,6 +35,7 @@ public:
 	// переопределяем интерфейс класса
 	void InData(ifstream& ifst); // ввод
 	void Out(ofstream& ofst); // вывод
+	void OutFeature(ofstream& ofst);
 	animation() {} // создание без инициализации.
 };
 class container {	
@@ -43,6 +46,7 @@ public:
 
 	void In(ifstream& ifst); // ввод
 	void Out(ofstream& ofst); // вывод
+	void OutFeature(ofstream& ofst); // вывод
 	void Clear(); // очистка контейнера от фигур
 	container(); // инициализация контейнера
 	~container() { Clear(); } // утилизация контейнера
