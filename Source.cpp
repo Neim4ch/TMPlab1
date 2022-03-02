@@ -3,9 +3,11 @@ using namespace std;
 
 void In(ifstream &ifst, feature_film& f) {
 	ifst >> f.director;
+	ifst >> f.country;
 }
 void Out(ofstream& ofst, feature_film& f) {
 	ofst << "It is feature film. Director is " << f.director << endl;
+	ofst << "The picture was filmed in " << f.country << ".\n";
 }
 void In(ifstream& ifst, animation_film& a) {
 	int t;
@@ -22,8 +24,10 @@ void In(ifstream& ifst, animation_film& a) {
 		a.woc = STOP_MOTION;
 		break;
 	}
+	ifst >> a.country;
 }
 void Out(ofstream& ofst, animation_film& a) {
+
 	switch (a.woc)
 	{
 	case 0:
@@ -36,6 +40,7 @@ void Out(ofstream& ofst, animation_film& a) {
 		ofst << "It is animation film. It's way of creation is stop motion" << endl;
 		break;
 	}
+	ofst << "The picture was filmed in " << a.country << ".\n";
 }
 film* InFilm(ifstream& ifst) {
 	film* fl = new film;

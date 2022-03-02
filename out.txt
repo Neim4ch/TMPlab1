@@ -1,10 +1,16 @@
 Filled container. 
 Container contents 6 elements.
 0: It is feature film. Director is Lucas
+The picture was filmed in USA.
 1: It is animation film. It's way of creation is drawing.
+The picture was filmed in Russia.
 2: It is animation film. It's way of creation is using dolls
+The picture was filmed in France.
 3: It is animation film. It's way of creation is stop motion
+The picture was filmed in England.
 4: It is feature film. Director is Scorsese
+The picture was filmed in Italy.
 5: It is feature film. Director is Spielberg
+The picture was filmed in USA.
 Empty container. 
 Container contents 0 elements.

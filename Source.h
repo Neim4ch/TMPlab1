@@ -18,11 +18,13 @@ struct Node {
 
 struct feature_film {
 	string director = "";
+	string country = "";
 };
 
 enum way { DRAWN, DOLL, STOP_MOTION };// способ создания
 struct animation_film {
 		way woc;//способ создания
+		string country = "";
 };
 
 struct container {
