@@ -121,6 +121,9 @@ void container::In(ifstream& ifst) {
 void container::Out(ofstream& ofst) {
 	ofst << "Container contents " << size
 		 << " elements." << endl;
+
+	Sort();
+
 	int i = 0;
 	curr = head;
 	while (curr != NULL)
@@ -137,4 +140,28 @@ void container::Out(ofstream& ofst) {
 void container::OutCntVowels(ofstream& ofst)
 {
 	ofst << curr->pic->countVowels();
+}
+
+bool film::cmp(film& f)
+{
+	return countVowels() < f.countVowels();
+}
+
+void container::Sort()
+{
+	curr = head;
+	Node* currj = head;
+	while (curr != NULL)
+	{
+		currj = curr;
+		while (currj != NULL)
+		{
+			if (curr->pic->cmp(*currj->pic))
+			{
+				swap(curr->pic, currj->pic);
+			}
+			currj = currj->next;
+		}
+		curr = curr->next;
+	}
 }

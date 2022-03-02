@@ -9,6 +9,7 @@ public:
 	virtual void InData(ifstream& ifst) = 0; // ввод
 	virtual void Out(ofstream& ofst) = 0; // вывод
 	virtual int countVowels() = 0; // гласные 
+	bool cmp(film& f);
 };
 class Node {
 public:
@@ -49,6 +50,7 @@ public:
 	void In(ifstream& ifst); // ввод
 	void Out(ofstream& ofst); // вывод
 	void OutCntVowels(ofstream& ofst); //вывод количества гласных букв
+	void Sort();
 	void Clear(); // очистка контейнера от фигур
 	container(); // инициализация контейнера
 	~container() { Clear(); } // утилизация контейнера
