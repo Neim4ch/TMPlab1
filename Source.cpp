@@ -1,13 +1,13 @@
 #include "Source.h"
 using namespace std;
 
-void InFeature(ifstream &ifst, feature_film& f) {
+void In(ifstream &ifst, feature_film& f) {
 	ifst >> f.director;
 }
-void OutFeature(ofstream& ofst, feature_film& f) {
+void Out(ofstream& ofst, feature_film& f) {
 	ofst << "It is feature film. Director is " << f.director << endl;
 }
-void InAnimation(ifstream& ifst, animation_film& a) {
+void In(ifstream& ifst, animation_film& a) {
 	int t;
 	ifst >> t;
 	switch (t)
@@ -23,7 +23,7 @@ void InAnimation(ifstream& ifst, animation_film& a) {
 		break;
 	}
 }
-void OutAnimation(ofstream& ofst, animation_film& a) {
+void Out(ofstream& ofst, animation_film& a) {
 	switch (a.woc)
 	{
 	case 0:
@@ -47,13 +47,13 @@ film* InFilm(ifstream& ifst) {
 	case 1:
 		fl->key = feature;
 		f = new feature_film;
-		InFeature(ifst, *f);
+		In(ifst, *f);
 		fl->obj = (void*)f;
 		break;
 	case 2:
 		fl->key = animation;
 		a = new animation_film;
-		InAnimation(ifst, *a);
+		In(ifst, *a);
 		fl->obj = (void*)a;
 		break;
 	default:
@@ -68,6 +68,21 @@ film* InFilm(ifstream& ifst) {
 	return fl;
 }
 
+void OutFilm(ofstream& ofst, film &f) {
+	if (f.key == feature) 
+	{
+		feature_film* pf;
+		pf = (feature_film *)(f.obj);
+		Out(ofst, *pf);
+	}
+	if (f.key == animation)
+	{
+		animation_film* pa;
+		pa = (animation_film*)f.obj;
+		Out(ofst, *pa);
+	}
+}
+
 void Clear(container* c) {
 	c->head = NULL;
 	c->curr = NULL;
@@ -79,7 +94,7 @@ void InCont(ifstream& ifst, container* c) {
 
 		Node* newNode = new Node;
 		newNode->fl = InFilm(ifst);
-		feature_film* f1 = (feature_film*)newNode->fl->obj;
+		//feature_film* f1 = (feature_film*)newNode->fl->obj;
 		if (c->head == NULL)
 		{
 			c->head = newNode;
@@ -106,18 +121,7 @@ void OutCont(ofstream& ofst, container* c) {
 	while (c->curr != NULL)
 	{
 		ofst << i << ": ";
-		if (c->curr->fl->key == feature) 
-		{
-			feature_film* pf;
-			pf = (feature_film *)(c->curr->fl->obj);
-			OutFeature(ofst, *pf);
-		}
-		else
-		{
-			animation_film* pa;
-			pa = (animation_film*)c->curr->fl->obj;
-			OutAnimation(ofst, *pa);
-		}
+		OutFilm(ofst, *(c->curr->fl));
 		c->curr = c->curr->next;
 		i++;
 	}
