@@ -24,6 +24,7 @@
     <ProjectGuid>{f71b1723-d216-4f42-8c60-6723611035d6}</ProjectGuid>
     <RootNamespace>TMPlab1OOP</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>TMPlab1</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

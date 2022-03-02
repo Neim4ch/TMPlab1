@@ -7,6 +7,12 @@ void In(ifstream &ifst, feature_film& f) {
 void Out(ofstream& ofst, feature_film& f) {
 	ofst << "It is feature film. Director is " << f.director << endl;
 }
+void In(ifstream& ifst, documentary_film& f) {
+	ifst >> f.year;
+}
+void Out(ofstream& ofst, documentary_film& f) {
+	ofst << "It is documentary film. It's year of creation is " << f.year << endl;
+}
 void In(ifstream& ifst, animation_film& a) {
 	int t;
 	ifst >> t;
@@ -41,6 +47,7 @@ film* InFilm(ifstream& ifst) {
 	film* fl = new film;
 	feature_film* f;
 	animation_film* a;
+	documentary_film* d;
 	int k = 0;
 	ifst >> k;
 	switch (k) {
@@ -55,6 +62,12 @@ film* InFilm(ifstream& ifst) {
 		a = new animation_film;
 		In(ifst, *a);
 		fl->obj = (void*)a;
+		break;
+	case 3:
+		fl->key = documentary;
+		d = new documentary_film;
+		In(ifst, *d);
+		fl->obj = (void*)d;
 		break;
 	default:
 		return 0;
@@ -81,6 +94,12 @@ void OutFilm(ofstream& ofst, film &f) {
 		pa = (animation_film*)f.obj;
 		Out(ofst, *pa);
 	}
+	if (f.key == documentary)
+	{
+		documentary_film* pd;
+		pd = (documentary_film*)f.obj;
+		Out(ofst, *pd);
+	}
 }
 
 void Clear(container* c) {
@@ -94,7 +113,6 @@ void InCont(ifstream& ifst, container* c) {
 
 		Node* newNode = new Node;
 		newNode->fl = InFilm(ifst);
-		//feature_film* f1 = (feature_film*)newNode->fl->obj;
 		if (c->head == NULL)
 		{
 			c->head = newNode;

@@ -1,5 +1,5 @@
-﻿  Source.cpp
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (TMPlab1_OOP.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Source.cpp
   TMPlab1_OOP.cpp
   Generating Code...
-  LINK : C:\Users\bushd\source\repos\TMPlab1_OOP\Debug\TMPlab1_OOP.exe not found or not built by the last incremental link; performing full link
-  TMPlab1_OOP.vcxproj -> C:\Users\bushd\source\repos\TMPlab1_OOP\Debug\TMPlab1_OOP.exe
+  TMPlab1_OOP.vcxproj -> C:\Users\bushd\source\repos\TMPlab1_OOP\Debug\TMPlab1.exe
