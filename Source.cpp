@@ -120,6 +120,8 @@ void OutCont(ofstream& ofst, container* c) {
 	ofst << "Container contents " << c->size
 		<< " elements." << endl;
 
+	Sort(*c);
+
 	int i = 0;
 	c->curr = c->head;
 	while (c->curr != NULL)
@@ -168,3 +170,39 @@ int countVowel(film& fl)
 	}
 	return 0;
 }
+
+bool cmpVowels(Node* f1, Node* f2)
+{
+	return countVowel(*f1->fl) < countVowel(*f2->fl);
+}
+
+void Sort(container& c) 
+{
+	Node* curri = c.head;
+	Node* currj = c.head;
+	while(curri != NULL)
+	{
+		currj = curri->next;
+		while(currj !=NULL) {
+			if (cmpVowels(curri, currj)) 
+			{
+				swap(curri->fl, currj->fl);
+			}
+			currj = currj->next;
+		}
+		curri = curri->next;
+	}
+}
+
+//void Sort(container& c) {
+//	for (int i = 0; i < c.len - 1; i++) {
+//		for (int j = i + 1; j < c.len; j++) {
+//			if (Compare(c.cont[i], c.cont[j])) {
+//				shape* tmp = c.cont[i];
+//				c.cont[i] = c.cont[j];
+//				c.cont[j] = tmp;
+//			}
+//		}
+//	}
+//}
+

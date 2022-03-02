@@ -1,6 +1,4 @@
 ﻿  Source.cpp
-C:\Users\bushd\source\repos\TMPlab1_OOP\TMPlab1_OOP\Source.cpp(140,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\bushd\source\repos\TMPlab1_OOP\TMPlab1_OOP\Source.cpp(149,20): warning C4018: '<': signed/unsigned mismatch
-  TMPlab1_OOP.cpp
-  Generating Code...
+C:\Users\bushd\source\repos\TMPlab1_OOP\TMPlab1_OOP\Source.cpp(142,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\bushd\source\repos\TMPlab1_OOP\TMPlab1_OOP\Source.cpp(151,20): warning C4018: '<': signed/unsigned mismatch
   TMPlab1_OOP.vcxproj -> C:\Users\bushd\source\repos\TMPlab1_OOP\Debug\TMPlab1_OOP.exe
