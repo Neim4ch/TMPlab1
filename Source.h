@@ -40,3 +40,4 @@ film* OutFilm(ifstream& ifst);
 void Clear(container* c);
 void InCont(ifstream& ifst, container* c);
 void OutCont(ofstream& ofst, container* c);
+void OutFeature(ofstream& ofst, container* c);

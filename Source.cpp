@@ -126,3 +126,23 @@ void OutCont(ofstream& ofst, container* c) {
 		i++;
 	}
 }
+
+void OutFeature(ofstream& ofst, container* c)
+{
+	ofst << "Only feature films." << endl;
+	c->curr = c->head;
+	int i = 0;
+	while(c->curr != NULL) 
+	{
+		ofst << i << ": ";
+		if (c->curr->fl->key == feature)
+		{
+			OutFilm(ofst, *c->curr->fl);
+		}
+		else
+			ofst << endl;
+		i++;
+		c->curr = c->curr->next;
+	}
+
+}
