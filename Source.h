@@ -18,11 +18,13 @@ struct Node {
 
 struct feature_film {
 	string director = "";
+	string name = "";
 };
 
 enum way { DRAWN, DOLL, STOP_MOTION };// способ создания
 struct animation_film {
 		way woc;//способ создания
+		string name = "";
 };
 
 struct container {
@@ -40,3 +42,7 @@ film* OutFilm(ifstream& ifst);
 void Clear(container* c);
 void InCont(ifstream& ifst, container* c);
 void OutCont(ofstream& ofst, container* c);
+
+int countVowel(feature_film& f);
+int countVowel(animation_film& a);
+int countVowel(film& fl);
