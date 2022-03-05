@@ -110,7 +110,7 @@ void feature::OutFeature(ofstream& ofst)
 {
 	Out(ofst);
 }
-void animation::OutFeature(ofstream& ofst)
+void film::OutFeature(ofstream& ofst)
 {
 	ofst << endl;
 }

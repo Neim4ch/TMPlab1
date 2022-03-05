@@ -8,7 +8,7 @@ public:
 	static film* In(ifstream& ifst);
 	virtual void InData(ifstream& ifst) = 0; // ввод
 	virtual void Out(ofstream& ofst) = 0; // вывод
-	virtual void OutFeature(ofstream& ofst) = 0;
+	virtual void OutFeature(ofstream& ofst);
 };
 class Node {
 public:
@@ -35,7 +35,7 @@ public:
 	// переопределяем интерфейс класса
 	void InData(ifstream& ifst); // ввод
 	void Out(ofstream& ofst); // вывод
-	void OutFeature(ofstream& ofst);
+	//void OutFeature(ofstream& ofst);
 	animation() {} // создание без инициализации.
 };
 class container {	
