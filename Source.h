@@ -4,6 +4,7 @@
 using namespace std;
 class film {
 public:
+	string country;
 	// иденитфикация, порождение и ввод фигуры из потока
 	static film* In(ifstream& ifst);
 	virtual void InData(ifstream& ifst) = 0; // ввод
@@ -19,7 +20,7 @@ public:
 // игровой фильм
 class feature : public film {
 	string director; // режисер
-	string country;
+	
 public:
 	// переопределяем интерфейс класса
 	void InData(ifstream& ifst); // ввод
@@ -30,7 +31,6 @@ public:
 class animation : public film {
 	enum way { DRAWN, DOLL, STOP_MOTION };// способ создания
 	way woc;//способ создания
-	string country;
 public:
 	// переопределяем интерфейс класса
 	void InData(ifstream& ifst); // ввод
