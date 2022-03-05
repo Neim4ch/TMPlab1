@@ -1,15 +1,12 @@
 #include "Source.h"
 using namespace std; 
 void feature::InData(ifstream& ifst) {
-	ifst >> name;
 	ifst >> director;
 }
 void feature::Out(ofstream& ofst) {
-	ofst << "This is " << name << ". ";
 	ofst << "It is feature film. Director is " << director << endl;
 }
 void animation::InData(ifstream& ifst) {
-	ifst >> name;
 	int t;
 	ifst >> t;
 	switch (t)
@@ -26,7 +23,6 @@ void animation::InData(ifstream& ifst) {
 	}
 }
 void animation::Out(ofstream& ofst) {
-	ofst << "This is " << name << ". ";
 	switch (woc)
 	{
 	case 0:
@@ -43,16 +39,7 @@ void animation::Out(ofstream& ofst) {
 
 string vowels = "AEIOUYaeiouy";
 
-int animation::countVowels()
-{
-	int cnt = 0;
-	for (int i = 0; i < name.length(); i++)
-	{
-		if (vowels.find(name[i]) < vowels.length())cnt++;
-	}
-	return cnt; 
-}
-int feature::countVowels()
+int film::countVowels()
 {
 	int cnt = 0;
 	for (int i = 0; i < name.length(); i++)
@@ -76,6 +63,7 @@ film* film::In(ifstream& ifst) {
 	default:
 		return 0;
 	}
+	ifst >> fl->name;
 	fl->InData(ifst);
 	return fl;
 }
@@ -126,6 +114,7 @@ void container::Out(ofstream& ofst) {
 	while (curr != NULL)
 	{
 		ofst << i << ": ";
+		curr->pic->OutName(ofst);
 		curr->pic->Out(ofst);
 		ofst << "Number of vowels = ";
 		OutCntVowels(ofst);
@@ -137,4 +126,8 @@ void container::Out(ofstream& ofst) {
 void container::OutCntVowels(ofstream& ofst)
 {
 	ofst << curr->pic->countVowels();
+}
+void film::OutName(ofstream& ofst)
+{
+	ofst << "This is " << name << ". ";
 }

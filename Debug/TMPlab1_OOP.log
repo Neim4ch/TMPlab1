@@ -1,7 +1,5 @@
 ﻿  Source.cpp
-C:\Users\bushd\source\repos\TMPlab1_OOP\TMPlab1_OOP\Source.cpp(49,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\bushd\source\repos\TMPlab1_OOP\TMPlab1_OOP\Source.cpp(58,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\bushd\source\repos\TMPlab1_OOP\TMPlab1_OOP\Source.cpp(45,20): warning C4018: '<': signed/unsigned mismatch
   TMPlab1_OOP.cpp
   Generating Code...
-  LINK : C:\Users\bushd\source\repos\TMPlab1_OOP\Debug\TMPlab1_OOP.exe not found or not built by the last incremental link; performing full link
   TMPlab1_OOP.vcxproj -> C:\Users\bushd\source\repos\TMPlab1_OOP\Debug\TMPlab1_OOP.exe

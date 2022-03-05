@@ -3,12 +3,14 @@
 #include <fstream>
 using namespace std;
 class film {
+	string name;
 public:
 	// иденитфикация, порождение и ввод фигуры из потока
 	static film* In(ifstream& ifst);
 	virtual void InData(ifstream& ifst) = 0; // ввод
 	virtual void Out(ofstream& ofst) = 0; // вывод
-	virtual int countVowels() = 0; // гласные 
+	virtual int countVowels(); // гласные 
+	void OutName(ofstream& ofst);
 };
 class Node {
 public:
@@ -20,24 +22,20 @@ public:
 // игровой фильм
 class feature : public film {
 	string director; // режисер
-	string name;
 public:
 	// переопределяем интерфейс класса
 	void InData(ifstream& ifst); // ввод
 	void Out(ofstream& ofst); // вывод
-	int countVowels();
 	feature() {} // создание без инициализации.
 };
 // мультфильм
 class animation : public film {
 	enum way { DRAWN, DOLL, STOP_MOTION };// способ создания
 	way woc;//способ создания
-	string name;
 public:
 	// переопределяем интерфейс класса
 	void InData(ifstream& ifst); // ввод
 	void Out(ofstream& ofst); // вывод
-	int countVowels();
 	animation() {} // создание без инициализации.
 };
 class container {	
