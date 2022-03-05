@@ -2,16 +2,13 @@
 using namespace std;
 
 void In(ifstream &ifst, feature_film& f) {
-	ifst >> f.name;
 	ifst >> f.director;
 }
 void Out(ofstream& ofst, feature_film& f) {
-	ofst << "This is \"" << f.name << "\". ";
 	ofst << "It is feature film. Director is " << f.director << endl;
 }
 void In(ifstream& ifst, animation_film& a) {
 	int t;
-	ifst >> a.name;
 	ifst >> t;
 	switch (t)
 	{
@@ -27,7 +24,6 @@ void In(ifstream& ifst, animation_film& a) {
 	}
 }
 void Out(ofstream& ofst, animation_film& a) {
-	ofst << "This is \"" << a.name << "\". ";
 	switch (a.woc)
 	{
 	case 0:
@@ -47,6 +43,7 @@ film* InFilm(ifstream& ifst) {
 	animation_film* a;
 	int k = 0;
 	ifst >> k;
+	ifst >> fl->name;
 	switch (k) {
 	case 1:
 		fl->key = feature;
@@ -73,6 +70,7 @@ film* InFilm(ifstream& ifst) {
 }
 
 void OutFilm(ofstream& ofst, film &f) {
+	ofst << "This is \"" << f.name << "\". ";
 	if (f.key == feature) 
 	{
 		feature_film* pf;
@@ -134,37 +132,12 @@ void OutCont(ofstream& ofst, container* c) {
 
 string vowels = "aeiouyAEIOUY";
 
-int countVowel(feature_film& f)
-{
-	int cnt = 0;
-	for (int i = 0; i < f.name.length(); i++)
-	{
-		if (vowels.find(f.name[i]) < vowels.length())cnt++;
-	}
-	return cnt;
-}
-int countVowel(animation_film& a)
-{
-	int cnt = 0;
-	for (int i = 0; i < a.name.length(); i++)
-	{
-		if (vowels.find(a.name[i]) < vowels.length())cnt++;
-	}
-	return cnt;
-}
 int countVowel(film& fl)
 {
-	if (fl.key == feature)
+	int cnt = 0;
+	for (int i = 0; i < fl.name.length(); i++)
 	{
-		feature_film* pf;
-		pf = (feature_film*)fl.obj;
-		return countVowel(*pf);
+		if (vowels.find(fl.name[i]) < vowels.length())cnt++;
 	}
-	if (fl.key == animation)
-	{
-		animation_film* pa;
-		pa = (animation_film*)fl.obj;
-		return countVowel(*pa);
-	}
-	return 0;
+	return cnt;
 }

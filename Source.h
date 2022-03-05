@@ -8,7 +8,7 @@ enum type {animation, feature};
 struct film {
 	void* obj = NULL;
 	type key;
-	
+	string name = "";
 };
 
 struct Node {
@@ -18,13 +18,11 @@ struct Node {
 
 struct feature_film {
 	string director = "";
-	string name = "";
 };
 
 enum way { DRAWN, DOLL, STOP_MOTION };// способ создания
 struct animation_film {
 		way woc;//способ создания
-		string name = "";
 };
 
 struct container {
