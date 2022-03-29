@@ -13,6 +13,8 @@ public:
 	int countVowels(); // гласные 
 	void OutName(ofstream& ofst);
 	bool cmp(film& f);
+	virtual void OutFeature(ofstream& ofst);
+
 };
 class Node {
 public:
@@ -30,6 +32,7 @@ public:
 	void InData(ifstream& ifst); // ввод
 	void Out(ofstream& ofst); // вывод
 	int countVowels();
+	void OutFeature(ofstream& ofst);
 	feature() {} // создание без инициализации.
 };
 // мультфильм
@@ -41,6 +44,7 @@ public:
 	void InData(ifstream& ifst); // ввод
 	void Out(ofstream& ofst); // вывод
 	int countVowels();
+	//void OutFeature(ofstream& ofst);
 	animation() {} // создание без инициализации.
 };
 //документальный
@@ -63,6 +67,7 @@ public:
 	void Out(ofstream& ofst); // вывод
 	void OutCntVowels(ofstream& ofst); //вывод количества гласных букв
 	void Sort();
+	void OutFeature(ofstream& ofst); // вывод
 	void Clear(); // очистка контейнера от фигур
 	container(); // инициализация контейнера
 	~container() { Clear(); } // утилизация контейнера
