@@ -2,7 +2,6 @@
 using namespace std; 
 void feature::InData(ifstream& ifst) {
 	ifst >> director;
-	ifst >> country;
 }
 void feature::Out(ofstream& ofst) {
 	ofst << "It is feature film. Director is " << director << endl;
@@ -29,7 +28,6 @@ void animation::InData(ifstream& ifst) {
 		woc = STOP_MOTION;
 		break;
 	}
-	ifst >> country;
 }
 void animation::Out(ofstream& ofst) {
 	switch (woc)
@@ -78,6 +76,7 @@ film* film::In(ifstream& ifst) {
 	}
 	ifst >> fl->name;
 	fl->InData(ifst);
+	ifst >> fl->country;
 	return fl;
 }
 Node::Node(film* newpic)
@@ -123,7 +122,7 @@ void container::Out(ofstream& ofst) {
 	ofst << "Container contents " << size
 		 << " elements." << endl;
 
-	Sort();
+	//Sort();
 
 	int i = 0;
 	curr = head;
@@ -170,4 +169,28 @@ void container::Sort()
 void film::OutName(ofstream& ofst)
 {
 	ofst << "This is " << name << ". ";
+}
+void feature::OutFeature(ofstream& ofst)
+{
+	OutName(ofst);
+	Out(ofst);
+}
+void film::OutFeature(ofstream& ofst)
+{
+	ofst << endl;
+}
+
+void container::OutFeature(ofstream& ofst) {
+	int i = 0;
+	curr = head;
+	while (curr != NULL)
+	{
+		ofst << i << ": ";
+		if (curr->pic)
+		{
+			curr->pic->OutFeature(ofst);
+		}
+		curr = curr->next;
+		i++;
+	}
 }

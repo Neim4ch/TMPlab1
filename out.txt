@@ -1,16 +1,66 @@
 Filled container. 
-Container contents 6 elements.
-0: It is feature film. Director is Lucas
+Unsorted container. 
+Container contents 8 elements.
+0: This is Star_Wars. It is feature film. Director is Lucas
 This picture was filmed in USA
-1: It is animation film. It's way of creation is drawing.
-This picture was filmed in France
-2: It is animation film. It's way of creation is using dolls
-This picture was filmed in Greece
-3: It is animation film. It's way of creation is stop motion
-This picture was filmed in Russia
-4: It is feature film. Director is Scorsese
-This picture was filmed in Italy
-5: It is feature film. Director is Spielberg
+Number of vowels = 2
+1: This is Cartoon1. It is animation film. It's way of creation is drawing.
+This picture was filmed in Japan
+Number of vowels = 3
+2: This is Cartoon2aaa. It is animation film. It's way of creation is using dolls
+This picture was filmed in China
+Number of vowels = 6
+3: This is Cartoon3aaaa. It is animation film. It's way of creation is stop motion
+This picture was filmed in Korea
+Number of vowels = 7
+4: This is Goodfellas. It is feature film. Director is Scorsese
 This picture was filmed in USA
+Number of vowels = 4
+5: This is Schindler's_List. It is feature film. Director is Spielberg
+This picture was filmed in USA
+Number of vowels = 3
+6: This is Doc1oo. It is documentary film. It's year of creation is 1999
+Number of vowels = 3
+7: This is Doc2o. It is documentary film. It's year of creation is 2005
+Number of vowels = 2
+
+
+Sorted container. 
+Container contents 8 elements.
+0: This is Cartoon3aaaa. It is animation film. It's way of creation is stop motion
+This picture was filmed in Korea
+Number of vowels = 7
+1: This is Cartoon2aaa. It is animation film. It's way of creation is using dolls
+This picture was filmed in China
+Number of vowels = 6
+2: This is Goodfellas. It is feature film. Director is Scorsese
+This picture was filmed in USA
+Number of vowels = 4
+3: This is Cartoon1. It is animation film. It's way of creation is drawing.
+This picture was filmed in Japan
+Number of vowels = 3
+4: This is Schindler's_List. It is feature film. Director is Spielberg
+This picture was filmed in USA
+Number of vowels = 3
+5: This is Doc1oo. It is documentary film. It's year of creation is 1999
+Number of vowels = 3
+6: This is Star_Wars. It is feature film. Director is Lucas
+This picture was filmed in USA
+Number of vowels = 2
+7: This is Doc2o. It is documentary film. It's year of creation is 2005
+Number of vowels = 2
+
+
+0: 
+1: 
+2: This is Goodfellas. It is feature film. Director is Scorsese
+This picture was filmed in USA
+43: 
+4: This is Schindler's_List. It is feature film. Director is Spielberg
+This picture was filmed in USA
+35: 
+6: This is Star_Wars. It is feature film. Director is Lucas
+This picture was filmed in USA
+27: 
 Empty container. 
 Container contents 0 elements.

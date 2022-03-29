@@ -18,7 +18,13 @@ int main(int argc, char* argv[])
 	container c;
 		c.In(ifst);
 	ofst << "Filled container. " << endl;
+	ofst << "Unsorted container. " << endl;
 	c.Out(ofst);
+	ofst << endl << endl;
+	c.Sort();
+	ofst << "Sorted container. " << endl;
+	c.Out(ofst);
+	ofst << endl << endl;
 	c.OutFeature(ofst);
 	c.Clear();
 	ofst << "Empty container. " << endl;
