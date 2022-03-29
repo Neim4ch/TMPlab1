@@ -14,8 +14,6 @@ int main(int argc, char* argv[])
 	}
 	ifstream ifst(argv[1]);
 	ofstream ofst(argv[2]);
-	//ifstream ifst("in.txt");
-	//ofstream ofst("out.txt");
 	cout << "Start" << endl;
 	container c;
 		c.In(ifst);

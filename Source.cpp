@@ -46,6 +46,19 @@ void animation::Out(ofstream& ofst) {
 	}
 	ofst << "This picture was filmed in " << country << endl;
 }
+
+string vowels = "AEIOUYaeiouy";
+
+int film::countVowels()
+{
+	int cnt = 0;
+	for (int i = 0; i < name.length(); i++)
+	{
+		if (vowels.find(name[i]) < vowels.length())cnt++;
+	}
+	return cnt;
+}
+
 film* film::In(ifstream& ifst) {
 	film* fl;
 	int k;
@@ -63,6 +76,7 @@ film* film::In(ifstream& ifst) {
 	default:
 		return 0;
 	}
+	ifst >> fl->name;
 	fl->InData(ifst);
 	return fl;
 }
@@ -108,13 +122,52 @@ void container::In(ifstream& ifst) {
 void container::Out(ofstream& ofst) {
 	ofst << "Container contents " << size
 		 << " elements." << endl;
+
+	Sort();
+
 	int i = 0;
 	curr = head;
 	while (curr != NULL)
 	{
 		ofst << i << ": ";
+		curr->pic->OutName(ofst);
 		curr->pic->Out(ofst);
+		ofst << "Number of vowels = ";
+		OutCntVowels(ofst);
+		ofst << endl;
 		curr = curr->next;
 		i++;
 	}
+}
+void container::OutCntVowels(ofstream& ofst)
+{
+	ofst << curr->pic->countVowels();
+}
+
+bool film::cmp(film& f)
+{
+	return countVowels() < f.countVowels();
+}
+
+void container::Sort()
+{
+	curr = head;
+	Node* currj = head;
+	while (curr != NULL)
+	{
+		currj = curr;
+		while (currj != NULL)
+		{
+			if (curr->pic->cmp(*currj->pic))
+			{
+				swap(curr->pic, currj->pic);
+			}
+			currj = currj->next;
+		}
+		curr = curr->next;
+	}
+}
+void film::OutName(ofstream& ofst)
+{
+	ofst << "This is " << name << ". ";
 }
