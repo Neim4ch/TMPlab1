@@ -37,6 +37,16 @@ public:
 	void Out(ofstream& ofst); // вывод
 	animation() {} // создание без инициализации.
 };
+//документальный
+class documentary : public film {
+	int year;//год создания
+public:
+	// переопределяем интерфейс класса
+	void InData(ifstream& ifst); // ввод
+	void Out(ofstream& ofst); // вывод
+	documentary() {} // создание без инициализации.
+};
+
 class container {	
 public:
 	Node *head;
